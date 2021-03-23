@@ -1,0 +1,16 @@
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.exe
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.deps.json
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.runtimeconfig.json
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.runtimeconfig.dev.json
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.dll
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\ref\DigitalClockTest.dll
+D:\Microsoft VS Code\Workplace\DigitalClockTest\bin\Debug\net5.0\DigitalClockTest.pdb
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.csprojAssemblyReference.cache
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.AssemblyInfoInputs.cache
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.AssemblyInfo.cs
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.csproj.CoreCompileInputs.cache
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.dll
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\ref\DigitalClockTest.dll
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.pdb
+D:\Microsoft VS Code\Workplace\DigitalClockTest\obj\Debug\net5.0\DigitalClockTest.genruntimeconfig.cache
