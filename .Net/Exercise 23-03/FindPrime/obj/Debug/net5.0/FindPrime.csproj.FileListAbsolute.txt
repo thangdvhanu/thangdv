@@ -30,3 +30,19 @@ D:\VSCode\Workplace\thangdv\FindPrime\bin\Debug\net5.0\FindPrime.dll
 D:\VSCode\Workplace\thangdv\FindPrime\bin\Debug\net5.0\ref\FindPrime.dll
 D:\VSCode\Workplace\thangdv\FindPrime\bin\Debug\net5.0\FindPrime.pdb
 D:\VSCode\Workplace\thangdv\FindPrime\obj\Debug\net5.0\FindPrime.genruntimeconfig.cache
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.exe
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.deps.json
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.runtimeconfig.json
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.runtimeconfig.dev.json
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.dll
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\ref\FindPrime.dll
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\bin\Debug\net5.0\FindPrime.pdb
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.csprojAssemblyReference.cache
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.AssemblyInfoInputs.cache
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.AssemblyInfo.cs
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.csproj.CoreCompileInputs.cache
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.dll
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\ref\FindPrime.dll
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.pdb
+D:\Microsoft VS Code\Workplace\thangdv\.Net\Exercise 23-03\FindPrime\obj\Debug\net5.0\FindPrime.genruntimeconfig.cache

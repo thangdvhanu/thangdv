@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\VSCode\\Workplace\\thangdv\\FindPrime\\FindPrime.csproj",
+      "projectUniqueName": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 23-03\\FindPrime\\FindPrime.csproj",
       "projectName": "FindPrime",
-      "projectPath": "D:\\VSCode\\Workplace\\thangdv\\FindPrime\\FindPrime.csproj",
+      "projectPath": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 23-03\\FindPrime\\FindPrime.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\VSCode\\Workplace\\thangdv\\FindPrime\\obj\\",
+      "outputPath": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 23-03\\FindPrime\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
