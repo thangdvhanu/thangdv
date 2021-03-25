@@ -14,16 +14,8 @@ namespace CustomMiddleware.Middleware
             var sw = new Stopwatch();
             sw.Start();
 
-            string name = context.Request.Query["name"];
-            string time = Convert.ToString(DateTime.Now);
-
-            if (!string.IsNullOrWhiteSpace(name))
-            {
-                context.Request.Headers.Add("name", name);
-                context.Request.Headers.Add("time", time);
-            }
-
-            await context.Response.WriteAsync($"<h1>Name: {name}</h1><h1>Registed at: {time}</h1><h1>Took: {sw.ElapsedMilliseconds}</h1>");
+            Console.WriteLine($"URL: {context.Request.Scheme}://{context.Request.Host}{context.Request.Path}{context.Request.QueryString}");
+            Console.WriteLine($"Took: {sw.ElapsedMilliseconds.ToString()}");
             await _next(context);
         }
     }
