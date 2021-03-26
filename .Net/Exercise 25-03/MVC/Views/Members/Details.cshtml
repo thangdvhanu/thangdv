@@ -1,0 +1,20 @@
+@model MVC.Models.Member
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="card" style="margin-top:50px;">
+
+    <div class="card-body">
+        <div>
+
+            <h1>Name : @Model.FirstName @Model.LastName</h1>
+            <h1>Gender : @Model.Gender</h1>
+            <h1>Birthday : @Model.DOB</h1>
+            <h1>Phone : @Model.PhoneNumber</h1>
+            <h1>Email : @Model.BirthPlace</h1>
+
+        </div>
+    </div>
+</div>

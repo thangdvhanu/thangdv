@@ -1,0 +1,39 @@
+@model ICollection<MVC.Models.Member>
+@{
+    ViewData["Title"] = "List";
+    int index = 0;
+}
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="navbar-nav flex-grow-1">
+        <li class="nav-item">@Html.ActionLink("Add New Member", "CreateForm", "Members")</li>
+    </ul>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Gender</th>
+            <th>Date of Birth</th>
+            <th>Phone Number</th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.FirstName @item.LastName</td>
+                <td>@item.Gender</td>
+                <td>@item.DOB</td>
+                <td>@item.PhoneNumber</td>
+                <td>@Html.ActionLink("Details", "Details", "Members", new { i=index })</td>
+                <td>@Html.ActionLink("Edit", "UpdateForm", "Members", new { i=index })</td>
+                <td>@Html.ActionLink("Delete", "DeleteWarning", "Members", new { i=index })</td>
+            </tr>
+            index++;
+        }
+    </tbody>
+</table>
