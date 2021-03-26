@@ -1,12 +1,22 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MVC.Models;
 namespace MVC.Controllers
 {
     public class MembersController : Controller
     {
-        MembersRepository members = new MembersRepository();
+        private IMembersRepository members = new MembersRepository();
+        public IActionResult Search(string keyword)
+        {
+            if(string.IsNullOrEmpty(keyword))
+            {
+                return View("Index", members.GetListMembers());
+            }
+            List<Member> searched = members.GetListMembersByName(keyword);
+            return View("Index", searched);
+        }
         public IActionResult Index()
         {
             return View(members.GetListMembers());
@@ -24,6 +34,8 @@ namespace MVC.Controllers
             }
             return View(member);
         }
+        
+        // [Authorize("Admin")]
         public IActionResult CreateForm()
         {
             return View();
@@ -40,6 +52,8 @@ namespace MVC.Controllers
             members.AddNewMember(member);
             return View("Details", member);
         }
+
+        // [Authorize("Admin")]
         public IActionResult UpdateForm(int? i)
         {
             if (!i.HasValue)
@@ -70,21 +84,25 @@ namespace MVC.Controllers
             Member memberEdited = members.GetMemberByIndex(index);
             return View("Details", member);
         }
-        public IActionResult DeleteWarning(int? i){
-            if(!i.HasValue)
+
+        // [Authorize("Admin")]
+        public IActionResult DeleteWarning(int? i)
+        {
+            if (!i.HasValue)
             {
                 return RedirectToAction("Index", "Members");
             }
             Member member = members.GetMemberByIndex(i.Value);
-            if(member==null)
+            if (member == null)
             {
                 return RedirectToAction("Index", "Members");
             }
             ViewBag.MemberIndexToDelete = i.Value;
             return View(member);
         }
-        public IActionResult Delete(int? index){
-            if(!index.HasValue)
+        public IActionResult Delete(int? index)
+        {
+            if (!index.HasValue)
             {
                 return RedirectToAction("Index", "Members");
             }
