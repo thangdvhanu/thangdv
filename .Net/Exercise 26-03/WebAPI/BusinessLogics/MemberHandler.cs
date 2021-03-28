@@ -52,7 +52,7 @@ namespace WebAPI.BusinessLogics
 
         public List<string> GetMemberWithFullNameOnly()
         {
-            var result = _listMembers.Select(x => $"{x.FirstName + x.LastName}").ToList();
+            var result = _listMembers.Select(x => $"{x.FirstName + " " + x.LastName}").ToList();
             return result;
         }
 

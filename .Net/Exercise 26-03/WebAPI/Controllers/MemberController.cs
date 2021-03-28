@@ -18,13 +18,13 @@ namespace WebAPI.Controllers
             _memberHandler = memberHandler;
         }
         [HttpGet]
-        [Route("/api/memberbygender/{gender}")]
+        [Route("/api/member/memberbygender/{gender}")]
         public List<Member> FilterMemberByGender(string gender)
         {
             return _memberHandler.FilterMemberByGender(gender);
         }
         [HttpGet]
-        [Route("/api/member/memberbybirthplace/{place}")]
+        [Route("/api/memberbybirthplace/{place}")]
         public List<Member> FilterMemberByBirthPlace(string place)
         {
             return _memberHandler.FilterMemberByBirthPlace(place);
