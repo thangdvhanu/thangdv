@@ -20,5 +20,9 @@ namespace WebAPI.BusinessLogics
         List<Member> FilterMemberByBirthPlace(string place);
         //6. Add new member to class
         List<Member> AddNewMember(Member member);
+        //7. Delete a member from class
+        List<Member> DeleteMember(int index);
+        //8. Return list members who is graduated
+        List<Member> FilterMemberByGraduation(bool IsGraduated);
     }
 }

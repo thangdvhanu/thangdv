@@ -59,10 +59,21 @@ namespace WebAPI.Controllers
         {
             return _memberHandler.FilterMemberByBirthYearLessThan(year);
         }
+        [HttpGet]
+        [Route("/api/memberbygraduation/{isGraduated}")]
+        public List<Member> FilterMemberByGraduation(bool isGraduated)
+        {
+            return _memberHandler.FilterMemberByGraduation(isGraduated);
+        }
         [HttpPost]
         public List<Member> Post(Member member)
         {
             return _memberHandler.AddNewMember(member);
+        }
+        [HttpDelete]
+        public List<Member> Delete(int index)
+        {
+            return _memberHandler.DeleteMember(index);
         }
     }
 }

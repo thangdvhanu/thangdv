@@ -20,6 +20,12 @@ namespace WebAPI.BusinessLogics
             return _listMembers;
         }
 
+        public List<Member> DeleteMember(int index)
+        {
+            _listMembers.RemoveAt(index);
+            return _listMembers;
+        }
+
         public List<Member> FilterMemberByBirthPlace(string place)
         {
             var result = _listMembers.Where(x => x.BirthPlace == place).ToList();
@@ -47,6 +53,12 @@ namespace WebAPI.BusinessLogics
         public List<Member> FilterMemberByGender(string gender)
         {
             var result = _listMembers.Where(x => x.Gender == gender).ToList();
+            return result;
+        }
+
+        public List<Member> FilterMemberByGraduation(bool IsGraduated)
+        {
+            var result = _listMembers.Where(x => x.IsGraduated == IsGraduated).ToList();
             return result;
         }
 
