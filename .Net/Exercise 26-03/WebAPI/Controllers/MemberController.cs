@@ -18,7 +18,7 @@ namespace WebAPI.Controllers
             _memberHandler = memberHandler;
         }
         [HttpGet]
-        [Route("/api/member/memberbygender/{gender}")]
+        [Route("/api/memberbygender/{gender}")]
         public List<Member> FilterMemberByGender(string gender)
         {
             return _memberHandler.FilterMemberByGender(gender);
@@ -30,31 +30,31 @@ namespace WebAPI.Controllers
             return _memberHandler.FilterMemberByBirthPlace(place);
         }
         [HttpGet]
-        [Route("/api/member/oldestmember")]
+        [Route("/api/oldestmember")]
         public Member ReturnTheOldestMember()
         {
             return _memberHandler.ReturnTheOldestMember();
         }
         [HttpGet]
-        [Route("/api/member/memberwithfullnameonly")]
+        [Route("/api/memberwithfullnameonly")]
         public List<string> GetMemberWithFullNameOnly()
         {
             return _memberHandler.GetMemberWithFullNameOnly();
         }
         [HttpGet]
-        [Route("/api/member/memberbybirthyear/{year}")]
+        [Route("/api/memberbybirthyear/{year}")]
         public List<Member> FilterMemberByBirthYear(int year)
         {
             return _memberHandler.FilterMemberByBirthYear(year);
         }
         [HttpGet]
-        [Route("/api/member/memberbybirthyeargreaterthan/{year}")]
+        [Route("/api/memberbybirthyeargreaterthan/{year}")]
         public List<Member> FilterMemberByBirthYearGreaterThan(int year)
         {
             return _memberHandler.FilterMemberByBirthYearGreaterThan(year);
         }
         [HttpGet]
-        [Route("/api/member/memberbybirthyearlessthan/{year}")]
+        [Route("/api/memberbybirthyearlessthan/{year}")]
         List<Member> FilterMemberByBirthYearLessThan(int year)
         {
             return _memberHandler.FilterMemberByBirthYearLessThan(year);
