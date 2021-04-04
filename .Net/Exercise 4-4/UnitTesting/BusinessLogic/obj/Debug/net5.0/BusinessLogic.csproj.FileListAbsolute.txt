@@ -1,0 +1,12 @@
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csprojAssemblyReference.cache
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfoInputs.cache
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.AssemblyInfo.cs
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.csproj.CoreCompileInputs.cache
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\bin\Debug\net5.0\BusinessLogic.deps.json
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\bin\Debug\net5.0\BusinessLogic.dll
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\bin\Debug\net5.0\ref\BusinessLogic.dll
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\bin\Debug\net5.0\BusinessLogic.pdb
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.dll
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\ref\BusinessLogic.dll
+D:\Microsoft VS Code\Workplace\UnitTesting\BusinessLogic\obj\Debug\net5.0\BusinessLogic.pdb
