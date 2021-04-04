@@ -31,18 +31,5 @@ namespace BusinessLogic
                 option.UseSqlServer("Server = DESKTOP-L257EVI\\SQLEXPRESS;Database = TestEFCore;Trusted_Connection=True;MultipleActiveResultSets= true");
             }
         }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
-
-            modelBuilder.Entity<Post>(entity =>
-            {
-                entity.HasIndex(e => e.BlogId, "IX_Posts_BlogId");
-
-                entity.HasOne(d => d.Blog)
-                    .WithMany(p => p.Posts)
-                    .HasForeignKey(d => d.BlogId);
-            });
-        }
     }
 }
