@@ -1,0 +1,40 @@
+.items{
+    width: 98%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #ffffff;
+}
+/* .fa-microphone{
+    color: #48ccd4;
+    font-size: 30px; */
+/* } */
+.item-bold-text{
+    font-family: "Times New Roman", Times, serif;
+    font-weight: bold;
+    font-size: 20;
+}
+.item-text{
+    font-family: "Times New Roman", Times, serif;
+}
+.item-icon{
+    color: #48ccd4;
+    font-size: 30px;
+    float: left;
+    padding: 0 20px;
+}
+.item-right{
+    float: right;
+}
+.font-bold{
+    font-weight: bold;
+  }
+.pack-icon{
+    font-size: 50px;
+    color: #5f094a;
+}
+.pack-name{
+    color: #5f094a;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
