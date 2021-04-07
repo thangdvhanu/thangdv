@@ -1,5 +1,5 @@
 {
-  "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\MVC.csproj",
+  "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-3.0",
     "LanguageVersion": "5.0",
@@ -15603,68 +15603,68 @@
   "RootNamespace": "MVC",
   "Documents": [
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Members\\CreateForm.cshtml",
-      "TargetPath": "Views\\Members\\CreateForm.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Home\\LoginForm.cshtml",
-      "TargetPath": "Views\\Home\\LoginForm.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Shared\\_Layout.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\_ViewStart.cshtml",
-      "TargetPath": "Views\\_ViewStart.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Members\\UpdateForm.cshtml",
-      "TargetPath": "Views\\Members\\UpdateForm.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Members\\Index.cshtml",
-      "TargetPath": "Views\\Members\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Home\\Index.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Home\\Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Members\\DeleteWarning.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Members\\CreateForm.cshtml",
+      "TargetPath": "Views\\Members\\CreateForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Members\\UpdateForm.cshtml",
+      "TargetPath": "Views\\Members\\UpdateForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Members\\DeleteWarning.cshtml",
       "TargetPath": "Views\\Members\\DeleteWarning.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Members\\Details.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Members\\Index.cshtml",
+      "TargetPath": "Views\\Members\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Members\\Details.cshtml",
       "TargetPath": "Views\\Members\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\Shared\\Error.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Microsoft VS Code\\Workplace\\MVC\\Views\\_ViewImports.cshtml",
-      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FilePath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\Views\\Home\\LoginForm.cshtml",
+      "TargetPath": "Views\\Home\\LoginForm.cshtml",
       "FileKind": "mvc"
     }
   ],
