@@ -1,0 +1,34 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Product 1",
+      "description": "somt des",
+      "price": "1231231"
+    },
+    {
+      "id": 2,
+      "name": "Product 2",
+      "description": "somt des",
+      "price": "1231231"
+    },
+    {
+      "id": 3,
+      "name": "Product 3",
+      "description": "somt des",
+      "price": "1231231"
+    },
+    {
+      "name": "el meo meo",
+      "description": "",
+      "price": "100000",
+      "id": 4
+    },
+    {
+      "name": "el meo meo",
+      "description": "",
+      "price": "100000",
+      "id": 5
+    }
+  ]
+}
