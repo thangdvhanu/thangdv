@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj": {}
+    "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj": {}
   },
   "projects": {
-    "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj": {
+    "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj",
+        "projectUniqueName": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj",
         "projectName": "MVC",
-        "projectPath": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj",
+        "projectPath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\MVC.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\obj\\",
+        "outputPath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 25-03\\MVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

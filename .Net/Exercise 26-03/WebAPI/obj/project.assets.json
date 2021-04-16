@@ -199,11 +199,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "d:\\Microsoft VS Code\\Workplace\\thangdvhanu\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\WebAPI.csproj",
+      "projectUniqueName": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\WebAPI.csproj",
       "projectName": "WebAPI",
-      "projectPath": "d:\\Microsoft VS Code\\Workplace\\thangdvhanu\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\WebAPI.csproj",
+      "projectPath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\WebAPI.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "d:\\Microsoft VS Code\\Workplace\\thangdvhanu\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\obj\\",
+      "outputPath": "d:\\Microsoft VS Code\\Workplace\\thangdv\\.Net\\Exercise 26-03\\WebAPI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
