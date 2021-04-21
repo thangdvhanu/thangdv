@@ -1,16 +1,4 @@
-
-interface IProduct {
-  id: number,
-  name: string,
-  description: string,
-  price: number,
-}
-
-interface Product{
-  ProductInfo: IProduct
-}
-
-export function ProductDetails(props: Product) {
+export function ProductDetails(props: any) {
   const { ProductInfo } = props;
   return (
     <>

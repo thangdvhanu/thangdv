@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useParams } from "react-router";
 import { ProductDetails } from "../forms/detail";
 import { GetProductById } from "../services/product-service";
@@ -13,7 +13,7 @@ export function Details() {
     .catch((err) => setError(err))
   return (
     <div>
-      {/* <ProductDetails ProductInfo={product}></ProductDetails> */}
+      <ProductDetails ProductInfo={product}></ProductDetails>
     </div>
   );
 }
