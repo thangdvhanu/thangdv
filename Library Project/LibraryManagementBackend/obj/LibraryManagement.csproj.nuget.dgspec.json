@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj": {}
+    "d:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj": {}
   },
   "projects": {
-    "D:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj": {
+    "d:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj",
+        "projectUniqueName": "d:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj",
         "projectName": "LibraryManagement",
-        "projectPath": "D:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj",
+        "projectPath": "d:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\LibraryManagement.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\obj\\",
+        "outputPath": "d:\\Microsoft VS Code\\Workplace\\LibraryManagementBackend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

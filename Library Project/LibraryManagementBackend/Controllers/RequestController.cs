@@ -24,6 +24,7 @@ namespace LibraryManagementBackend.Controllers
       _repository = repository;
     }
 
+    [Authorize("Admin")]
     [HttpGet]
     public IActionResult Get()
     {
@@ -53,6 +54,7 @@ namespace LibraryManagementBackend.Controllers
       }
     }
 
+    [Authorize]
     [HttpPost("{id}")]
     public IActionResult Post(int id, List<int> bookIds)
     {
@@ -67,6 +69,7 @@ namespace LibraryManagementBackend.Controllers
       }
     }
 
+    [Authorize("Admin")]
     [HttpPost("{userId}/approve/{requestId}")]
     public IActionResult Approve(int userId, int requestId)
     {
@@ -89,6 +92,7 @@ namespace LibraryManagementBackend.Controllers
       }
     }
 
+    [Authorize("Admin")]
     [HttpPost("{userId}/reject/{requestId}")]
     public IActionResult Reject(int userId, int requestId)
     {

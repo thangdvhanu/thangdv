@@ -8,6 +8,7 @@ using LibraryManagementBackend.Models.View;
 using LibraryManagementBackend.Repositoties.Users;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LibraryManagementBackend.Controllers
@@ -73,6 +74,7 @@ namespace LibraryManagementBackend.Controllers
 
     }
 
+    [Authorize]
     [HttpPost("/logout")]
     public async Task<IActionResult> LogoutAsync()
     {
