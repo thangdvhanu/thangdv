@@ -40,7 +40,7 @@ namespace LibraryManagementBackend.Controllers
     }
 
     [Authorize]
-    [HttpGet("{id}")]
+    [HttpGet("/request/user/{id}")]
     public IActionResult GetRequestsByUserId(int id)
     {
       IEnumerable<BorrowingRequest> requests = _repository.FilterByStatus(id);
@@ -54,9 +54,25 @@ namespace LibraryManagementBackend.Controllers
       }
     }
 
+
+    [Authorize]
+    [HttpGet("{id}")]
+    public IActionResult Get(int id)
+    {
+      BorrowingRequest request = _repository.GetById(id);
+      if (request != null)
+      {
+        return Ok(request);
+      }
+      else
+      {
+        return BadRequest(Message.IdNotFoundMessage);
+      }
+    }
+
     [Authorize]
     [HttpPost("{id}")]
-    public IActionResult Post(int id, List<int> bookIds)
+    public IActionResult Post(int id, int[] bookIds)
     {
       int result = _repository.Create(id, bookIds);
       switch (result)

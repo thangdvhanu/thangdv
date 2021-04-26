@@ -65,7 +65,7 @@ namespace LibraryManagementBackend.Controllers
           new ClaimsPrincipal(claimsIdentity),
           authenticationProperties);
 
-        return Ok(Message.LoginMess);
+        return Ok(_user);
       }
       else
       {

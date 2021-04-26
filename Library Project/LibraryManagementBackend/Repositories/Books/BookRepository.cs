@@ -3,6 +3,7 @@ using System.Linq;
 using LibraryManagementBackend.Data;
 using LibraryManagementBackend.Models.Entity;
 using LibraryManagementBackend.Models.View;
+using Microsoft.EntityFrameworkCore;
 
 namespace LibraryManagementBackend.Repositoties.Books
 {

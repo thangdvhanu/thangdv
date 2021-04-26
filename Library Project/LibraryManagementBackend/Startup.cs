@@ -35,7 +35,8 @@ namespace LibraryManagementBackend
                   builder.WithOrigins("https://localhost:5001",
                                       "http://localhost:3000")
                                       .AllowAnyHeader()
-                                      .AllowAnyMethod();
+                                      .AllowAnyMethod()
+                                      .AllowCredentials();
                 });
         });
 

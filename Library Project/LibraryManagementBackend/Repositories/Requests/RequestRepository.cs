@@ -17,7 +17,7 @@ namespace LibraryManagementBackend.Repositoties.Requests
       _context = context;
     }
 
-    public int Create(int userId, List<int> bookIds)
+    public int Create(int userId, int[] bookIds)
     {
       int borrowTimeInMonth = _context.BorrowingRequests.Count(
                                                                 c =>
@@ -88,7 +88,7 @@ namespace LibraryManagementBackend.Repositoties.Requests
 
     public IEnumerable<BorrowingRequest> FilterByStatus(int userId)
     {
-      return _context.BorrowingRequests.Where(c=>c.RequestUserId==userId).OrderBy(c=>c.Status);
+      return _context.BorrowingRequests.Where(c => c.RequestUserId == userId).OrderBy(c => c.Status);
     }
 
     public void Update(BorrowingRequest _entity, BorrowingRequest entity)

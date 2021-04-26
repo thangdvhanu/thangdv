@@ -47,9 +47,8 @@ namespace LibraryManagementBackend.Controllers
       return BadRequest(Message.IdNotFoundMessage);
     }
 
-    [Authorize("Admin")]
-    [HttpPost("")]
-    public IActionResult Post(UserFromView user)
+    [HttpPost("/register")]
+    public IActionResult Register(UserFromView user)
     {
       if (!ModelState.IsValid)
       {
