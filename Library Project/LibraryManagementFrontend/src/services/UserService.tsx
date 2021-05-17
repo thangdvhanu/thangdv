@@ -1,4 +1,4 @@
-import { User, UserOnRegister } from "../types/user";
+import { User, UserOnRegister } from "../models/user";
 import { HttpClient } from "./http-client";
 
 export class UserService extends HttpClient{

@@ -1,5 +1,5 @@
-import { Book, BookInput } from "../types/book";
-import { User, UserLogin } from "../types/user";
+import { Book, BookInput } from "../models/book";
+import { User, UserLogin } from "../models/user";
 import { HttpClient } from "./http-client";
 
 export class AuthenticationSerivce extends HttpClient{

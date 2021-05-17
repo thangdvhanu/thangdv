@@ -1,6 +1,7 @@
 import {  } from "module";
 
 export enum StatusCode{
-  ClientErrorUnauthorized = 401,
-  ClientErrorNotFound = 404
+  ClientErrorAccessDenied = 401,
+  ClientErrorUnauthorized = 403,
+  ClientErrorNotFound = 400
 }

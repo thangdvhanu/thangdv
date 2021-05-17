@@ -24,14 +24,23 @@ export abstract class HttpClient {
     );
   };
 
-  private _handleResponse = ({ data }: AxiosResponse) => data;
+  private _handleResponse = ({ data }: AxiosResponse) => {
+    console.log(data);
+    return data;
+  };
 
   protected _handleError = (error: any) => {
     if (error.response.status === StatusCode.ClientErrorUnauthorized) {
-      console.log("401 Unauthorized!");
+      console.log("403 Unauthorized!");
+      window.location.replace("/login");
     }
     else if (error.response.status === StatusCode.ClientErrorNotFound) {
-      console.log("404 Not Found!");
+      console.log("400 Not Found!");
+      window.location.replace("/400-not-found");
+    }
+    else if (error.response.status === StatusCode.ClientErrorAccessDenied) {
+      console.log("401 Access Denied!");
+      window.location.replace("/401-access-denied");
     }
   };
 }

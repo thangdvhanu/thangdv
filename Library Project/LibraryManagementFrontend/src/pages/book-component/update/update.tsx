@@ -1,80 +1,154 @@
-import axios from "axios";
+import { Button, Form, Input, Select } from "antd";
+import { useForm } from "antd/lib/form/Form";
+import TextArea from "antd/lib/input/TextArea";
+import Title from "antd/lib/typography/Title";
 import React, { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { useHistory, useParams } from "react-router-dom";
 import { BookService } from "../../../services/BookService";
 import { CategoryService } from "../../../services/CategoryService";
-import { Book, BookInput } from "../../../types/book";
-import { Category } from "../../../types/category";
+import { BookInput } from "../../../models/book";
+import { Category } from "../../../models/category";
+
+const { Option } = Select;
 
 export function UpdateBook() {
-  const { bookId } = useParams<any>();
-  const bookService = new BookService();
-  const cateService = new CategoryService();
 
-  const [book, setBook] = useState<Book>();
-  useEffect(() => {
-    (async () => {
-      let book = await bookService.getBook(bookId);
-      setBook(book);
-    })();
-  }, []);
+  const layout = {
+    labelCol: {
+      span: 16,
+      offset: 3,
+      pull: 9
+    },
+    wrapperCol: {
+      span: 16,
+      pull: 9
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+    },
+  };
 
   const [categories, setCategory] = useState<Category[]>([]);
+  const { bookId } = useParams<any>();
+  const [form] = useForm();
+  let cateService = new CategoryService();
+  let bookService = new BookService();
+  let history = useHistory();
+
+  const onFinish = (data: BookInput) => {
+    (async () => {
+      await bookService.updateBook(data, bookId);
+      history.push(`/book/details/${bookId}`);
+    })();
+  };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   useEffect(() => {
     (async () => {
-      let categories = await cateService.getCategories();
+      let categories = await cateService.getAll();
       setCategory(categories);
     })();
   }, []);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  }
-    = useForm<BookInput>({
-      mode: 'onTouched'
-    });
 
   useEffect(() => {
-    reset(book);
-  }, [book])
-  let history = useHistory();
-  const onSubmit: SubmitHandler<BookInput> = (data: BookInput) => {
     (async () => {
-      await bookService.updateBook(data, bookId);
-      history.push(`/details/book/${bookId}`);
+      let book = await bookService.getBook(bookId);
+      form.setFieldsValue({
+        title: book.title,
+        shortContent: book.shortContent,
+        url: book.url,
+        categoryId: book.category.id
+      });
     })();
-  };
+  }, []);
+
+  useEffect(() => {
+    (async () => {
+      let categories = await cateService.getAll();
+      setCategory(categories);
+    })();
+  }, []);
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <label htmlFor="TitleCtrl">Title</label>
-        <input {...register("title", { required: true })} type="text" className="form-control" placeholder="Enter book's title..."></input>
-        {errors.title?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-        <label htmlFor="ShortContentCtrl">Short Content</label>
-        <input {...register("shortContent", { required: true })} type="text" className="form-control" placeholder="Enter book's short content..."></input>
-        {errors.shortContent?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-        <label htmlFor="UrlCtrl">Url</label>
-        <input {...register("url", { required: true })} type="text" className="form-control" placeholder="Enter book image's url..."></input>
-        {errors.url?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-      </div>
-      <div className="custom-select" style={{ width: 200 }}>
-        <h5>Category</h5>
-        <select {...register("categoryId", { required: true })} >
-          {
-            categories &&
-            categories.length > 0 &&
-            categories.map((category: Category) =>
-            (
-              <option key={category.id} value={category.id}>{category.name}</option>
-            ))
-          }
-        </select>
-      </div>
-      <br></br>
-      <button type="submit" className="btn btn-primary">Update</button>
-    </form>
+    <>
+      <Title>Update Book</Title>
+      <Form
+        {...layout}
+        form={form}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          label="Title"
+          name="title"
+          rules={[
+            {
+              required: true,
+              message: 'Please input book name!',
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Short Content"
+          name="shortContent"
+          rules={[
+            {
+              required: true,
+              message: 'Please input short content!',
+            }
+          ]}
+        >
+          <TextArea rows={14} />
+        </Form.Item>
+
+        <Form.Item
+          label="Url"
+          name="url"
+          rules={[
+            {
+              required: true,
+              message: 'Please input image link!',
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Category"
+          name="categoryId"
+          rules={[
+            {
+              required: true,
+              message: 'Please select a category!',
+            }
+          ]}>
+          <Select
+            style={{ width: 200 }}
+          >
+            {
+              categories &&
+              categories.length > 0 &&
+              categories.map((category: Category) =>
+              (
+                <Option key={category.id} value={category.id}>{category.name}</Option>
+              ))
+            }
+          </Select>
+        </Form.Item>
+
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Update
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }

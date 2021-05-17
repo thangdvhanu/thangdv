@@ -1,50 +1,89 @@
-import React, { useEffect, useState } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Button, Form, Input } from "antd";
+import { useForm } from "antd/lib/form/Form";
+import Title from "antd/lib/typography/Title";
+import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { CategoryService } from "../../../services/CategoryService";
-import { Category, CategoryInput } from "../../../types/category";
+import { CategoryInput } from "../../../models/category";
 
 export function UpdateCategory() {
-  const [category, setCategory] = useState({});
+  const layout = {
+    labelCol: {
+      span: 16,
+      offset: 3,
+      pull: 9
+    },
+    wrapperCol: {
+      span: 16,
+      pull: 9
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+    },
+  };
+
   const { categoryId } = useParams<any>();
+
   let service = new CategoryService();
 
-  useEffect(() => {
-    (async () => {
-      let category = await service.getCategory(categoryId);
-      setCategory(category);
-    })();
-  }, []);
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors }
-  }
-    = useForm<CategoryInput>({
-      mode: 'onTouched'
-    });
   let history = useHistory();
 
-  useEffect(() => {
-    reset(category);
-  }, [category])
-
-  const onSubmit: SubmitHandler<CategoryInput> = (data: CategoryInput) => {
+  const onFinish = (data: CategoryInput) => {
+    console.log('Success:', data);
     (async () => {
       await service.updateCategory(data, categoryId);
       history.push("/category");
     })();
   };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
+  const [form] = useForm();
+
+  useEffect(() => {
+    (async () => {
+      let category = await service.getCategory(categoryId);
+      form.setFieldsValue({
+        name: category.name,
+      });
+    })();
+  }, []);
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <label htmlFor="NameCtrl">Name</label>
-        <input {...register("name", { required: true, pattern: /^[a-zA-z ]+$/i })} type="text" className="form-control" placeholder="Enter category name..."></input>
-        {errors.name?.type === "required" && <p style={{ color: 'red' }}>This field  is required!</p>}
-        {errors.name?.type === "pattern" && <p style={{ color: 'red' }}>Only alphabet character included!</p>}
-      </div>
-      <button type="submit" className="btn btn-primary">Update</button>
-    </form>
+    <>
+      <Title>Update Category</Title>
+      <Form
+        {...layout}
+        form={form}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          name="name"
+          label="Name"
+          rules={[
+            {
+              required: true,
+              message: 'Please input category name!',
+            },
+            {
+              pattern: /^[A-Za-z ]+$/i,
+              message: 'Please input alphabet character!'
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Update
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }

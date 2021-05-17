@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { BookService } from '../../../services/BookService';
 import "../style.css"
-import { Book } from '../../../types/book';
+import { Book } from '../../../models/book';
+import { Button, Space, Table, Image, Popconfirm } from 'antd';
+import { DeleteOutlined, EditOutlined, SnippetsOutlined, ZoomInOutlined } from '@ant-design/icons';
+
+const { Column } = Table;
 
 export function BookList() {
   const [books, setBook] = useState<Book[]>([]);
@@ -21,24 +25,55 @@ export function BookList() {
     })();
   }, [update]);
   return (
-    <div>
-      <Link to={`/create/book`}>create</Link>
-      <div className="row " >
-        {books &&
-          books.length > 0 &&
-          books.map((book: Book) => (
-            <div className="col-md-4 book " key={book.id}>
-              <div>
-                <img className="imgBook" src={book.url} alt="Book" />
-                <div className="infoBook">
-                  <h5 > {book.title}</h5>
-                  <Link className="btn btn-success" to={`/details/book/${book.id}`}>Detail</Link>
-                  <button className="btn btn-danger" onClick={() => { OnDelete(book.id) }}>Delete</button>
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
-    </div >
+    <>
+      {books && books.length > 0 &&
+        <Table key="table" dataSource={books} pagination={{ defaultPageSize: 7 }}>
+          <Column
+            align='center'
+            title="Book"
+            dataIndex="url"
+            key="url"
+            render={(url) => (
+              <Image
+                width={100}
+                src={url}
+                preview={{
+                  maskClassName: 'customize-mask',
+                  mask: (
+                    <Space direction="vertical" align="center">
+                      <ZoomInOutlined />
+                      Zoom
+                    </Space>
+                  ),
+                }}
+              />
+            )}
+          />
+          <Column align='center' title="Title" dataIndex="title" key="title" />
+          <Column align='center' title="Short Content" dataIndex="shortContent" key="shortContent" />
+          <Column
+            align='center'
+            title="Action"
+            dataIndex='id'
+            key="action"
+            render={(id) => (
+              <Space size="middle">
+                <Button icon={<SnippetsOutlined />} size='middle'>
+                  <Link style={{ color: 'black' }} to={`/book/details/${id}`}>Detail</Link>
+                </Button>
+                <Button icon={<EditOutlined />} size='middle'>
+                  <Link style={{ color: 'black' }} to={`/book/update/${id}`}>Edit</Link>
+                </Button>
+                <Popconfirm title="Delete?" onConfirm={() => { OnDelete(id) }}>
+                  <Button icon={<DeleteOutlined />} size='middle'>
+                    Delete
+                  </Button>
+                </Popconfirm>
+              </Space>
+            )}
+          />
+        </Table>
+      }
+    </>
   );
 }

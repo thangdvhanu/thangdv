@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { RequestService } from "../../../services/RequestService";
-import { Detail, Request } from "../../../types/request";
+import { Detail, Request } from "../../../models/request";
 
 export function RequestDetails() {
   const [request, setRequest] = useState<Request>();

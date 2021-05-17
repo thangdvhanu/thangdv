@@ -1,37 +1,75 @@
+import { Button, Form, Input } from "antd";
+import Title from "antd/lib/typography/Title";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { useHistory } from "react-router-dom";
 import { CategoryService } from "../../../services/CategoryService";
-import { CategoryInput } from "../../../types/category";
+import { CategoryInput } from "../../../models/category";
 
 export function CreateCategory() {
+  const layout = {
+    labelCol: {
+      span: 16,
+      offset: 3,
+      pull: 9
+    },
+    wrapperCol: {
+      span: 16,
+      pull: 9
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+    },
+  };
+
   let service = new CategoryService();
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  }
-    = useForm<CategoryInput>({
-      mode: 'onTouched'
-    });
 
   let history = useHistory();
 
-  const onSubmit: SubmitHandler<CategoryInput> = (data: CategoryInput) => {
+  const onFinish = (data: CategoryInput) => {
+    console.log('Success:', data);
     (async () => {
       await service.createCategory(data);
       history.push("/category");
     })();
   };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <label htmlFor="NameCtrl">Name</label>
-        <input {...register("name", { required: true, pattern: /^[a-zA-z ]+$/i })} type="text" className="form-control" placeholder="Enter category name..."></input>
-        {errors.name?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-        {errors.name?.type === "pattern" && <p style={{ color: 'red' }}>Only alphabet character included!</p>}
-      </div>
-      <button type="submit" className="btn btn-primary">Add</button>
-    </form>
+    <>
+      <Title>Create Category</Title>
+      <Form
+        {...layout}
+        name="basic"
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          label="Name"
+          name="name"
+          rules={[
+            {
+              required: true,
+              message: 'Please input category name!',
+            },
+            {
+              pattern: /^[A-Za-z ]+$/i,
+              message: 'Please input alphabet character!'
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Create
+      </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }

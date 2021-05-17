@@ -1,45 +1,109 @@
+import { Button, Form, Input } from "antd";
+import Title from "antd/lib/typography/Title";
 import React from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "antd/lib/form/Form";
 import { useHistory } from "react-router-dom";
 import { UserService } from "../../services/UserService";
-import { UserOnRegister } from "../../types/user";
+import { UserOnRegister } from "../../models/user";
 
 export function Register() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  }
-    = useForm<UserOnRegister>({
-      mode: 'onTouched'
-    });
-    let history = useHistory();
-    const service = new UserService();
+  const layout = {
+    labelCol: {
+      span: 16,
+      offset: 3,
+      pull: 9
+    },
+    wrapperCol: {
+      span: 16,
+      pull: 9
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+    },
+  };
 
-  const onSubmit: SubmitHandler<UserOnRegister> = (data: UserOnRegister) => {
-    if(data.password===data.passwordConfirm){
+  let history = useHistory();
+  const service = new UserService();
+  const [form] = useForm();
+
+  const onFinish = (data: UserOnRegister) => {
+    console.log('Success:', data);
+    (async () => {
       service.register(data);
       history.push("/login");
-    }
-        else{
-          alert("Password and Password Confirmation are not match!")
-        }
+    })();
   };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <h2>Create account</h2>
-        <label htmlFor="UsernameCtrl">Username</label>
-        <input {...register("username", { required: true })} type="text" className="form-control" placeholder="Enter username..."></input>
-        {errors.username?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-        <label htmlFor="PasswordCtrl">Password</label>
-        <input {...register("password", { required: true })} type="password" className="form-control" placeholder="Enter password..."></input>
-        {errors.password?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-        <label htmlFor="PasswordConfirmCtrl">Password Confirmation</label>
-        <input {...register("passwordConfirm", { required: true })} type="password" className="form-control" placeholder="Enter password..."></input>
-        {errors.passwordConfirm?.type === "required" && <p style={{ color: 'red' }}>This field is required!</p>}
-      </div>
-      <button type="submit" className="btn btn-primary">Register</button>
-    </form>
+    <>
+      <Title>Register</Title>
+      <Form
+        {...layout}
+        name="basic"
+        form={form}
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your username!',
+            }
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your password!',
+            }
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
+
+        <Form.Item
+          label="Confirm Password"
+          name="confirm"
+          dependencies={['password']}
+          rules={[
+            {
+              required: true,
+              message: 'Please input category name!',
+            },
+            ({ getFieldValue }) => ({
+              validator(_, value) {
+                if (!value || getFieldValue('password') === value) {
+                  return Promise.resolve();
+                }
+
+                return Promise.reject(new Error('The two passwords that you entered do not match!'));
+              },
+            }),
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
+
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Register
+          </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }

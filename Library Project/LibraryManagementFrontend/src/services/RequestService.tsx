@@ -1,5 +1,5 @@
-import { Book } from "../types/book";
-import { Request } from "../types/request";
+import { Book } from "../models/book";
+import { Request } from "../models/request";
 import { HttpClient } from "./http-client";
 
 export class RequestService extends HttpClient {

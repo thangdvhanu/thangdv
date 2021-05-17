@@ -1,40 +1,86 @@
-import { SubmitHandler, useForm } from "react-hook-form";
+import { Button, Form, Input } from "antd";
+import Title from "antd/lib/typography/Title";
+import React from "react";
 import { useHistory } from "react-router-dom";
 import { AuthenticationSerivce } from "../../services/AuthenticationSerivce";
-import { UserLogin } from "../../types/user";
+import { UserLogin } from "../../models/user";
 
 export function Login() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors }
-  }
-    = useForm<UserLogin>({
-      mode: 'onTouched'
-    });
+  const layout = {
+    labelCol: {
+      span: 16,
+      offset: 3,
+      pull: 9
+    },
+    wrapperCol: {
+      span: 16,
+      pull: 9
+    },
+  };
+  const tailLayout = {
+    wrapperCol: {
+    },
+  };
+
   let history = useHistory();
   const service = new AuthenticationSerivce();
 
-  const onSubmit: SubmitHandler<UserLogin> = (data: UserLogin) => {
+  const onFinish = (data: UserLogin) => {
+    console.log('Success:', data);
     (async () => {
       let userLogin = await service.login(data);
       sessionStorage.setItem("id", userLogin.id.toString());
       sessionStorage.setItem("role", userLogin.role.name);
       sessionStorage.setItem("username", userLogin.username);
-      history.push("/home");
+      history.push("/category");
     })();
   };
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
+  };
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="form-group">
-        <label htmlFor="UsernameCtrl">Username</label>
-        <input {...register("username", { required: true })} type="text" className="form-control" placeholder="Enter username..."></input>
-        {errors.username?.type === "required" && <p style={{ color: 'red' }}>Username is required!</p>}
-        <label htmlFor="PasswordCtrl">Password</label>
-        <input {...register("password", { required: true })} type="password" className="form-control" placeholder="Enter password..."></input>
-        {errors.password?.type === "required" && <p style={{ color: 'red' }}>Password is required!</p>}
-      </div>
-      <button type="submit" className="btn btn-primary">Login</button>
-    </form>
+    <>
+      <Title>Login</Title>
+      <Form
+        {...layout}
+        name="basic"
+        onFinish={onFinish}
+        onFinishFailed={onFinishFailed}
+      >
+        <Form.Item
+          label="Username"
+          name="username"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your username!',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="Password"
+          name="password"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your password!',
+            },
+          ]}
+        >
+          <Input.Password />
+        </Form.Item>
+
+        <Form.Item {...tailLayout}>
+          <Button type="primary" htmlType="submit">
+            Login
+      </Button>
+        </Form.Item>
+      </Form>
+    </>
   );
 }

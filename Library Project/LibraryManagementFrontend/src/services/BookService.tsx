@@ -1,4 +1,4 @@
-import { Book, BookInput } from "../types/book";
+import { Book, BookInput } from "../models/book";
 import { HttpClient } from "./http-client";
 
 export class BookService extends HttpClient{

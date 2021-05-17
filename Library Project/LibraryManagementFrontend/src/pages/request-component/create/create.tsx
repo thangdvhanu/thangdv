@@ -1,8 +1,11 @@
+import { SnippetsOutlined, ZoomInOutlined } from "@ant-design/icons";
+import { Button, Checkbox, Image, message, Space, Table } from "antd";
+import Column from "antd/lib/table/Column";
 import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { BookService } from "../../../services/BookService";
 import { RequestService } from "../../../services/RequestService";
-import { Book } from "../../../types/book";
+import { Book } from "../../../models/book";
 
 export function CreateRequest() {
   const [books, setBook] = useState<Book[]>([]);
@@ -11,13 +14,15 @@ export function CreateRequest() {
   let history = useHistory();
   const bookService = new BookService();
   const requestService = new RequestService();
-  let onPicking = (id: number) => {
+  let OnChange = (id: number) => {
+    let index = bookIds.indexOf(id);
     if (bookIds.length > 4) {
-      alert("You can borrow maximum 5 books!");
+      message.info("You can borrow maximum 5 books!");
     }
     else {
-      if (bookIds.includes(id)) {
-        alert("You already picked this book!");
+      if (!(index < 0)) {
+        bookIds.splice(index, 1);
+        console.log(bookIds);
       }
       else {
         bookIds.push(id);
@@ -25,7 +30,7 @@ export function CreateRequest() {
       }
     }
   };
-  let onRequest = () => {
+  let OnRequest = () => {
     (async () => {
       requestService.createRequest(userId, bookIds);
       history.push("/request");
@@ -39,21 +44,40 @@ export function CreateRequest() {
     })();
   }, []);
   return (
-    <div>
-      <div className="row " >
-        {books &&
-          books.map((book: Book) => (
-            <div className="col-md-4 book " key={book.id} onClick={() => { onPicking(book.id) }}>
-              <div>
-                <img className="imgBook" src={book.url} alt="Book" />
-                <div >
-                  <h5 > {book.title}</h5>
-                </div>
-              </div>
-            </div>
-          ))}
-      </div>
-      <button className="btn btn-primary" onClick={() => onRequest()}>Borrow</button>
-    </div >
+    <>
+      <Button icon={<SnippetsOutlined />} onClick={() => OnRequest()} size='middle'>
+        Make Borrow Request
+      </Button>
+      {books && books.length > 0 &&
+        <Table key="table" dataSource={books} pagination={{ defaultPageSize: 7 }}>
+          <Column render={(text, record: any, index) => (
+            <Checkbox onChange={() => OnChange(record.id)}></Checkbox>
+          )} />
+          <Column
+            align='center'
+            title="Book"
+            dataIndex="url"
+            key="url"
+            render={(url) => (
+              <Image
+                width={100}
+                src={url}
+                preview={{
+                  maskClassName: 'customize-mask',
+                  mask: (
+                    <Space direction="vertical" align="center">
+                      <ZoomInOutlined />
+                      Zoom
+                    </Space>
+                  ),
+                }}
+              />
+            )}
+          />
+          <Column align='center' title="Title" dataIndex="title" key="title" />
+          <Column align='center' title="Short Content" dataIndex="shortContent" key="shortContent" />
+        </Table>
+      }
+    </>
   );
 }
