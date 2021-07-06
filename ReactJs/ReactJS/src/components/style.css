@@ -1,0 +1,16 @@
+.routing-list {
+    padding: 24px;
+    background: #fff;
+    min-height: 20px
+}
+
+.navbar-header {
+    background: white
+}
+
+.navbar-menu {
+    background: white;
+    z-index: 1;
+    width: 100%;
+    position: fixed;
+}
